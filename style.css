@@ -6,64 +6,16 @@
 }
 
 /* Page font */
+/* FIX 2: Prevent horizontal scroll globally */
+html,
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
-/* Cover section */
-.cover {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #0f172a;
-    color: white;
-}
-
-/* Cover content */
-.cover-content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.cover-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #38bdf8;
-}
-
-.cover-content p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: auto;
-    margin-bottom: 25px;
-}
-
-/* Buttons */
-.cover-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    background-color: #38bdf8;
-    color: #0f172a;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #0ea5e9;
-}
-
-/* Navbar */
-
+/* ─── NAVBAR ─────────────────────────────────────────────── */
 .navbar {
     position: fixed;
     top: 0;
@@ -71,8 +23,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 15px 60px;
     background: #020617;
+    z-index: 1000;
+    /* FIX 1: Ensure navbar sits above all content */
 }
 
 .logo {
@@ -97,9 +51,67 @@ body {
     color: #38bdf8;
 }
 
+/* ─── COVER SECTION ──────────────────────────────────────── */
+.cover {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0f172a;
+    color: white;
+    /* FIX 4: Prevent text overflow */
+    padding: 20px;
+}
 
-/* Profile Image */
+.cover-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    /* FIX 4: Allow text to wrap cleanly */
+    word-break: break-word;
+}
 
+.cover-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #38bdf8;
+    word-break: break-word;
+}
+
+.cover-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 25px;
+    /* FIX 4: Contain paragraph within viewport */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Buttons */
+.cover-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    /* FIX: Buttons wrap on small screens */
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* ─── PROFILE IMAGE ──────────────────────────────────────── */
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -109,7 +121,7 @@ body {
     border: 4px solid #38bdf8;
 }
 
-/* About Section */
+/* ─── ABOUT SECTION ──────────────────────────────────────── */
 .about-section {
     padding: 100px 20px;
     background-color: #f9fafb;
@@ -120,17 +132,23 @@ body {
 .about-section .container {
     max-width: 900px;
     margin: auto;
+    /* FIX 4: Prevent container from exceeding viewport */
+    width: 100%;
 }
 
 .about-section h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
     color: #0f172a;
+    word-break: break-word;
 }
 
 .about-section p {
     margin-bottom: 15px;
     line-height: 1.7;
+    /* FIX 4: Prevent text overflow */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .about-section h3 {
@@ -153,7 +171,7 @@ body {
     margin-right: 10px;
 }
 
-/* Education Section */
+/* ─── EDUCATION SECTION ──────────────────────────────────── */
 .education-section {
     padding: 100px 20px;
     background-color: #eef2f7;
@@ -164,6 +182,7 @@ body {
 .education-section .container {
     max-width: 900px;
     margin: auto;
+    width: 100%;
 }
 
 .education-section h2 {
@@ -187,7 +206,7 @@ body {
     line-height: 1.7;
 }
 
-/* Skills Section */
+/* ─── SKILLS SECTION ─────────────────────────────────────── */
 .skills-section {
     padding: 100px 20px;
     background-color: #f9fafb;
@@ -198,6 +217,7 @@ body {
 .skills-section .container {
     max-width: 1000px;
     margin: auto;
+    width: 100%;
 }
 
 .skills-section h2 {
@@ -225,7 +245,6 @@ body {
 
 .skill-card:hover {
     transform: translateY(-10px);
-    /* lift effect */
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -235,7 +254,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* Services Section */
+/* ─── SERVICES SECTION ───────────────────────────────────── */
 .services-section {
     padding: 100px 20px;
     background-color: #eef2f7;
@@ -245,6 +264,7 @@ body {
 .services-section .container {
     max-width: 1000px;
     margin: auto;
+    width: 100%;
 }
 
 .services-section h2 {
@@ -254,10 +274,12 @@ body {
     color: #0f172a;
 }
 
-/* Hover Lift Effect for Services */
+/* FIX 3: Service items use Flexbox with wrapping enabled */
 .service-item {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    /* Allows stacking on small screens */
     margin-bottom: 50px;
     gap: 30px;
     background-color: white;
@@ -270,7 +292,6 @@ body {
 
 .service-item:hover {
     transform: translateY(-10px);
-    /* lift effect */
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -292,21 +313,10 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     max-width: 600px;
+    overflow-wrap: break-word;
 }
 
-.service-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #38bdf8;
-}
-
-.service-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 600px;
-}
-
-/* Projects Section */
+/* ─── PROJECTS SECTION ───────────────────────────────────── */
 .projects-section {
     padding: 100px 20px;
     background-color: #f9fafb;
@@ -317,6 +327,7 @@ body {
 .projects-section .container {
     max-width: 1000px;
     margin: auto;
+    width: 100%;
 }
 
 .projects-section h2 {
@@ -332,7 +343,6 @@ body {
     gap: 30px;
 }
 
-/* Project Card */
 .project-card {
     background-color: white;
     border-radius: 12px;
@@ -360,31 +370,55 @@ body {
     color: #334155;
 }
 
-/* Modal */
+/* ─── MODAL ──────────────────────────────────────────────── */
+
+/*
+ * FIX 1 — Z-INDEX: Modal overlay sits at 1100, above the navbar (1000).
+ * FIX 3 — SCROLL LOCK: overflow-y: auto on the overlay lets modal content
+ *          scroll independently. Body scroll is locked via JS using the
+ *          helper class `body.modal-open` defined below.
+ */
 .modal {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 1100;
+    /* Higher than navbar z-index: 1000 */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    /* Modal overlay itself scrolls if content is tall */
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+/*
+ * FIX 3 — SCROLL LOCK: Add/remove this class on <body> via JavaScript
+ * when the modal opens/closes:
+ *   document.body.classList.add('modal-open');    // on open
+ *   document.body.classList.remove('modal-open'); // on close
+ */
+body.modal-open {
+    overflow: hidden;
+    /* Freeze background page scroll */
+}
+
+/*
+ * FIX 2 — POSITIONING: Top margin accounts for the navbar height (~65px).
+ *          Extra padding-top inside the card ensures content starts
+ *          well below the close button.
+ */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto;
-    padding: 30px;
+    margin: 80px auto 40px;
+    /* 80px top clears the fixed navbar */
+    padding: 50px 40px 40px;
+    /* Extra top padding keeps title below close btn */
     border-radius: 12px;
     width: 95%;
     max-width: 1200px;
     text-align: left;
     position: relative;
-    margin: 2% auto;
-    /* يقلل المسافة من فوق ويزيد الارتفاع */
-    padding: 40px;
 }
 
 .project-gallery {
@@ -400,46 +434,38 @@ body {
     flex-shrink: 0;
 }
 
+/*
+ * FIX 2 — CLOSE BUTTON: Styled as a clear circular button so it's
+ *          always visible and has a large enough tap target on mobile.
+ */
 .close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
+    top: 12px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
     font-weight: bold;
+    line-height: 1;
     cursor: pointer;
+    background-color: #f1f5f9;
+    /* Visible background so it stands out */
+    border-radius: 50%;
+    color: #0f172a;
+    transition: background-color 0.2s, transform 0.2s;
+    z-index: 10;
+    /* Stay above modal content children */
 }
 
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        margin: 5% auto;
-        padding: 20px;
-    }
-
-    .project-gallery {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .project-gallery .gallery-img {
-        width: 100%;
-        height: auto;
-    }
+.close:hover {
+    background-color: #e2e8f0;
+    transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-card {
-        width: 90%;
-        /* تقريبًا يغطي عرض الشاشة */
-    }
-}
-
-/* Contact Section */
+/* ─── CONTACT SECTION ────────────────────────────────────── */
 .contact-section {
     padding: 100px 20px;
     background-color: #0f172a;
@@ -460,14 +486,16 @@ body {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    overflow-wrap: break-word;
 }
 
-/* Contact Icons */
 .contact-icons {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    /* FIX: Icons wrap on very small screens */
 }
 
 .contact-icons img {
@@ -481,7 +509,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Contact Button */
 .contact-btn {
     display: inline-block;
     padding: 12px 30px;
@@ -498,8 +525,129 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive */
+/* ═══════════════════════════════════════════════════════════
+   MOBILE MEDIA QUERIES (max-width: 768px)
+   ═══════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
+
+    /* ── FIX 1: Navbar — visible & usable on mobile ───────── */
+    .navbar {
+        display: flex;
+        /* Keep it visible */
+        flex-direction: row;
+        /* Logo left, links right */
+        flex-wrap: wrap;
+        /* Wrap links below logo if needed */
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        /* Tighter padding on small screens */
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        /* Reduce gap between links */
+        flex-wrap: wrap;
+        /* Links wrap to next line if tight */
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        /* Slightly smaller text */
+    }
+
+    /* ── FIX 2: No horizontal scroll ─────────────────────── */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* ── FIX 3: Services stack vertically ────────────────── */
+    .service-item {
+        flex-direction: column;
+        /* Stack image above text */
+        align-items: flex-start;
+    }
+
+    .service-img {
+        width: 100%;
+        /* Image fills card width */
+        height: auto;
+        /* Preserve aspect ratio */
+    }
+
+    .service-content p {
+        max-width: 100%;
+        /* Text no longer overflows */
+    }
+
+    /* ── FIX 4: Cover text contained ─────────────────────── */
+    .cover {
+        padding: 80px 20px 40px;
+        /* Top padding clears fixed navbar */
+    }
+
+    .cover-content h1 {
+        font-size: 2rem;
+    }
+
+    .cover-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .cover-content p {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    /* ── About section text fix ───────────────────────────── */
+    .about-section {
+        padding: 80px 15px;
+    }
+
+    .about-section h2 {
+        font-size: 1.7rem;
+    }
+
+    /* ── Projects grid stacks ─────────────────────────────── */
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+
+    /* ── Modal responsive ─────────────────────────────────── */
+    .modal-content {
+        width: 95%;
+        margin: 70px auto 30px;
+        /* 70px clears mobile navbar height */
+        padding: 50px 15px 20px;
+        /* Top padding keeps title below close btn */
+    }
+
+    .close {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    .project-gallery {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-gallery .gallery-img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* ── Contact section ──────────────────────────────────── */
     .contact-icons {
         gap: 20px;
     }
