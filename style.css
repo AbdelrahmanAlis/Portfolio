@@ -438,3 +438,78 @@ body {
         /* تقريبًا يغطي عرض الشاشة */
     }
 }
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 20px;
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #38bdf8;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Contact Icons */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.contact-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Contact Button */
+.contact-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #0ea5e9;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-icons {
+        gap: 20px;
+    }
+
+    .contact-icons img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact-btn {
+        padding: 10px 25px;
+    }
+}
