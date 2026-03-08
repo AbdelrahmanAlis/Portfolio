@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelrahman Ali | Data Engineer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Abdelrahman</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <header class="cover">
+
+        <div class="cover-content">
+
+            <img src="images/profile.jpg" alt="Profile Photo" class="profile-pic">
+
+            <h1>Abdelrahman Ali</h1>
+            <h2>Data Engineer</h2>
+
+            <p>
+                Building reliable data pipelines and transforming raw data into valuable insights
+            </p>
+
+            <div class="cover-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+
+            <p>
+                My name is <strong>Abdelrahman Ali</strong>. I graduated from the Faculty of Engineering, Alexandria
+                University, with a degree in Electronics and Communication.
+            </p>
+
+            <p>
+                I am now a <strong>Data Engineer</strong>, and most recently, I have developed multiple end-to-end data
+                pipelines that transform raw, unstructured data into clean, reliable datasets.
+            </p>
+
+            <p>
+                Throughout my work, I focus on building scalable, maintainable, and efficient data architectures that
+                ensure data integrity and support informed decision-making. I leverage my technical skills in
+                <strong>Advanced SQL</strong> for complex querying, <strong>Python</strong> for custom web scraping,
+                data cleaning, and building automated ETL processes, and <strong>Power BI</strong> for converting raw
+                data into actionable business intelligence.
+            </p>
+
+            <p>
+                My experience includes designing and implementing automated ETL workflows, integrating diverse data
+                sources, and delivering dashboards and reports that provide actionable business insights.
+            </p>
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2>Education</h2>
+
+            <div class="education-item">
+                <h3>Alexandria University</h3>
+                <p>Faculty of Engineering – Electronics and Communication</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+
+                <!-- Skill Card Example -->
+                <div class="skill-card">
+                    <img src="images/sql.png" alt="SQL Icon" class="skill-icon">
+                    <h3>SQL</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="images/python.png" alt="Python Icon" class="skill-icon">
+                    <h3>Python</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="images/powerbi.png" alt="Power BI Icon" class="skill-icon">
+                    <h3>Power BI</h3>
+                </div>
+
+                <div class="skill-card">
+                    <img src="images/SSIS.jpeg" alt="SSIS Icon" class="skill-icon">
+                    <h3>SSIS</h3>
+                </div>
+
+                <!-- Add more skill cards here -->
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Offered Services</h2>
+
+            <div class="service-item">
+                <img src="images/ETL.png" alt="ETL Development" class="service-img">
+                <div class="service-content">
+                    <h3>ETL Development</h3>
+                    <p>Design and implement efficient ETL processes to move and transform data from multiple sources
+                        into reliable datasets.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="images/data-cleaning.jpg" alt="Data Cleaning" class="service-img">
+                <div class="service-content">
+                    <h3>Data Cleaning</h3>
+                    <p>Clean and prepare raw data for analysis, ensuring accuracy, consistency, and quality of datasets.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="images/power-bi.png" alt="Power BI Dashboards" class="service-img">
+                <div class="service-content">
+                    <h3>Power BI Dashboards</h3>
+                    <p>Create interactive dashboards that convert raw data into actionable business insights for
+                        decision making.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="images/web-scraping.png" alt="Web Scraping" class="service-img">
+                <div class="service-content">
+                    <h3>Web Scraping</h3>
+                    <p>Develop custom Python scripts to extract data from websites and APIs efficiently and reliably.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="images/dwh.jpg" alt="Data Warehousing" class="service-img">
+                <div class="service-content">
+                    <h3>Data Warehouse</h3>
+                    <p>Building a structured, optimized framework—comprising data sources, staging, storage (Data
+                        Marts/Warehouse), and analytics tools—to support business intelligence and decision-making.
+                    </p>
+                </div>
+            </div>
+            <!-- Add more services if needed -->
+
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+
+                <!-- Project Card 1 -->
+                <div class="project-card" onclick="openModal('modal1')">
+                    <h3>BookStore-DWH-ETL</h3>
+                    <p class="project-summary">Transition from normalized DB to specialized DWH.</p>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" onclick="openModal('modal2')">
+                    <h3>Booking-Scraper-Python</h3>
+                    <p class="project-summary">Automates hotel search & data extraction from Booking.com.</p>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card" onclick="openModal('modal3')">
+                    <h3>SSIS-Sales-Data-Mart</h3>
+                    <p class="project-summary">Complete data pipeline & BI solution with Power BI.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal 1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <h2>BookStore-DWH-ETL</h2>
+                <p>This project demonstrates the transition from a normalized bookstore database to a specialized Data
+                    Warehouse (DWH). It handles complex data relationships and ensures data integrity for business
+                    intelligence reporting.</p>
+                <ul>
+                    <li>Database: SQL Server (T-SQL)</li>
+                    <li>Language: Python</li>
+                    <li>Libraries: Pandas, PyODBC</li>
+                    <li>Environment: Jupyter Notebooks</li>
+                </ul>
+                <div class="project-gallery">
+                    <img src="images/pipeline.png" alt="Step 2" class="gallery-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <h2>Booking-Scraper-Python</h2>
+                <p>A professional Python-based web scraper built with Selenium and Pandas to automate hotel search and
+                    data extraction from Booking.com.</p>
+                <ul>
+                    <li>Language: Python</li>
+                    <li>Automation: Selenium WebDriver</li>
+                    <li>Data Handling: Pandas</li>
+                    <li>Pattern: Object-Oriented Programming (OOP)</li>
+                </ul>
+                <div class="project-gallery">
+                    <img src="images/booking_result.png" alt="Step 1" class="gallery-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal 3 -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <h2>SSIS-Sales-Data-Mart</h2>
+                <p>This project demonstrates a complete Data Engineering Pipeline and Business Intelligence solution. It
+                    involves extracting raw transactional data (OLTP) from the Microsoft AdventureWorks database,
+                    transforming it into a structured Data Warehouse (Star Schema), and visualizing key business
+                    insights through a multi-page Power BI dashboard.</p>
+                <ul>
+                    <li>SQL Server Management Studio (SSMS)</li>
+                    <li>SQL Server Integration Services (SSIS)</li>
+                    <li>Power BI Desktop</li>
+                    <li>Microsoft Excel</li>
+                </ul>
+                <div class="project-gallery">
+                    <img src="images/pipeline_ssis.png" alt="Step 1" class="gallery-img">
+                    <img src="images/overview.png" alt="Step 2" class="gallery-img">
+                    <img src="images/customer_analysis.png" alt="Step 3" class="gallery-img">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>I’m always open to new projects or collaborations. Let’s build something amazing together!</p>
+
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/abdelrahmanalis/" target="_blank">
+                    <img src="icons/linkedin.jpg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/AbdelrahmanAlis" target="_blank">
+                    <img src="icons/github.png" alt="GitHub">
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=abdoali3015@gmail.com" target="_blank">
+                    <img src="icons/gmail.jpg" alt="Email">
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
