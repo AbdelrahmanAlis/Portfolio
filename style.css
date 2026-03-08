@@ -258,10 +258,12 @@ body {
 }
 
 /* Services Section */
+/* Services Section */
 .services-section {
     padding: 100px 20px;
     background-color: #eef2f7;
     color: #0f172a;
+    text-align: center;
 }
 
 .services-section .container {
@@ -269,63 +271,57 @@ body {
     margin: auto;
 }
 
+/* Section Title */
 .services-section h2 {
     font-size: 2.2rem;
     margin-bottom: 40px;
-    text-align: center;
     color: #0f172a;
 }
 
-/* Hover Lift Effect for Services */
-.service-item {
+/* Services Grid */
+.services-grid {
     display: flex;
-    align-items: center;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
+}
+
+/* Individual Service Card */
+.service-card {
     background-color: white;
     border-radius: 12px;
     padding: 20px;
-    transition: all 0.3s ease;
+    width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    /* يمنع النص يطلع برا الكارد */
+    word-wrap: break-word;
+    /* يقسم الكلمات الطويلة */
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.service-item:hover {
-    transform: translateY(-10px);
-    /* lift effect */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.service-img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0;
-}
+/* Media Query للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 
-.service-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #38bdf8;
-}
-
-.service-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 600px;
-}
-
-.service-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #38bdf8;
-}
-
-.service-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    max-width: 600px;
+    .service-card {
+        width: 90%;
+        /* يغطي معظم الشاشة */
+    }
 }
 
 /* Projects Section */
