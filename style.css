@@ -64,7 +64,7 @@ body {
 
 /* Navbar */
 
-/*.navbar {
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -73,28 +73,6 @@ body {
     align-items: center;
     padding: 15px 20px;
     background: #020617;
-}*/
-
-/* Navbar container */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    /* يوزع العناصر على طول العرض */
-    align-items: center;
-    padding: 15px 20px;
-    width: 100%;
-    /* أهم حاجة */
-    box-sizing: border-box;
-    /* بحيث padding ما يوسعش العنصر برا الشاشة */
-}
-
-/* Navbar items */
-.navbar ul {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .logo {
@@ -258,12 +236,10 @@ body {
 }
 
 /* Services Section */
-/* Services Section */
 .services-section {
     padding: 100px 20px;
     background-color: #eef2f7;
     color: #0f172a;
-    text-align: center;
 }
 
 .services-section .container {
@@ -271,57 +247,63 @@ body {
     margin: auto;
 }
 
-/* Section Title */
 .services-section h2 {
     font-size: 2.2rem;
     margin-bottom: 40px;
+    text-align: center;
     color: #0f172a;
 }
 
-/* Services Grid */
-.services-grid {
+/* Hover Lift Effect for Services */
+.service-item {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
     gap: 30px;
-    justify-content: center;
-}
-
-/* Individual Service Card */
-.service-card {
     background-color: white;
     border-radius: 12px;
     padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow: hidden;
-    /* يمنع النص يطلع برا الكارد */
-    word-wrap: break-word;
-    /* يقسم الكلمات الطويلة */
     transition: all 0.3s ease;
-    cursor: default;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.service-item:hover {
+    transform: translateY(-10px);
+    /* lift effect */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Query للشاشات الصغيرة */
-@media (max-width: 768px) {
-    .services-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
+.service-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
 
-    .service-card {
-        width: 90%;
-        /* يغطي معظم الشاشة */
-    }
+.service-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.service-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.service-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
 }
 
 /* Projects Section */
@@ -529,32 +511,5 @@ body {
 
     .contact-btn {
         padding: 10px 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        /* العناصر تنزل تحت بعض */
-        gap: 15px;
-        background-color: #0f172a;
-        /* ممكن خلفية للـ menu */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        display: none;
-        /* تحكم بالعرض/إخفاء للـ mobile menu */
-    }
-
-    .navbar ul.active {
-        display: flex;
-    }
-
-    .navbar .menu-toggle {
-        display: block;
-        /* زرار فتح القائمة للـ mobile */
-        cursor: pointer;
-        color: white;
     }
 }
