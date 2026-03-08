@@ -64,15 +64,37 @@ body {
 
 /* Navbar */
 
-.navbar {
+/*.navbar {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 15px 20px;
     background: #020617;
+}*/
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* يوزع العناصر على طول العرض */
+    align-items: center;
+    padding: 15px 20px;
+    width: 100%;
+    /* أهم حاجة */
+    box-sizing: border-box;
+    /* بحيث padding ما يوسعش العنصر برا الشاشة */
+}
+
+/* Navbar items */
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
@@ -511,5 +533,32 @@ body {
 
     .contact-btn {
         padding: 10px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        /* العناصر تنزل تحت بعض */
+        gap: 15px;
+        background-color: #0f172a;
+        /* ممكن خلفية للـ menu */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+        /* تحكم بالعرض/إخفاء للـ mobile menu */
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar .menu-toggle {
+        display: block;
+        /* زرار فتح القائمة للـ mobile */
+        cursor: pointer;
+        color: white;
     }
 }
